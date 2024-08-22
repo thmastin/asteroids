@@ -7,6 +7,8 @@ from constants import *
 
 def main():
     pygame.init()
+    fps = pygame.time.Clock()
+    dt = 0
 
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     
@@ -16,6 +18,8 @@ def main():
                 return
         screen.fill((0,0,0))
         pygame.display.flip()
+        dt = fps.tick(60) / 1000
+        print(dt)
         
         #print(f"Starting asteroids!\nScreen width: {SCREEN_WIDTH}\nScreen height: {SCREEN_HEIGHT}")
 
