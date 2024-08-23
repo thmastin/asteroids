@@ -41,6 +41,11 @@ def main():
             if thing.is_colliding_with_another_circle_shape(player):
                 print("Game Over!")
                 exit()
+        for thing in asteroids:
+            for shot in shots:
+                if thing.is_colliding_with_another_circle_shape(shot):
+                    thing.kill()
+                    shot.kill()
         pygame.display.flip()
         dt = fps.tick(60) / 1000
         
