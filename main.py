@@ -3,10 +3,12 @@
 # throughout this file
 
 import pygame
-pygame.init()
-
 from constants import *
 
+pygame.init()
+
+clock = pygame.time.Clock()
+dt = 0
 
 def main():
     print("Starting asteroids!")
