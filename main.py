@@ -48,6 +48,7 @@ def main():
         for thing in asteroids:
             if thing.collision(player):
                 print(f"Game Over!")
+                print(f"You killed {player.score} asteroids!")
                 sys.exit()
 
         for asteroid in asteroids:
@@ -55,6 +56,7 @@ def main():
                 if asteroid.collision(shot):
                     asteroid.split()
                     shot.kill()
+                    player.score += 1
 
         for thing in drawable:
             thing.draw(screen)
